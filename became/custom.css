@@ -1,0 +1,93 @@
+:root {
+  --custom-primary: #5f7adb;
+  --custom-secondary: #a2b2ee;
+  --custom-accent: #7b8cdd;
+  --custom-text: #26292b;
+  --custom-light-bg: #ffffff;
+  --custom-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --custom-transition: all 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(px);
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.browser-tab {
+  background: var(--custom-light-bg);
+  color: var(--custom-text);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.browser-tab:focus {
+  outline: 2px solid var(--custom-primary);
+  outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
+}
+
+.browser-tab:hover {
+  background: var(--custom-secondary);
+  color: var(--custom-text);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.browser-tab:active {
+  transform: translateY(0); 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.browser-tab.active {
+  background: var(--custom-primary);
+  color: white;
+  box-shadow: var(--custom-shadow);
+  transform: translateY(-2px);
+}
+
+.browser-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3px;
+  background: var(--custom-accent);
+  border-radius: 3px 3px 0 0;
+}
+
+
+.step-title {
+  color: var(--custom-primary);
+  border-bottom: 2px solid var(--custom-primary);
+}
+
+
+.icon-list li i {
+  color: var(--custom-primary);
+  width: 25px;
+}
+.custom-card, .faq-item{
+  transition: var(--custom-transition);
+}
+.custom-card:hover, .faq-item:hover{
+  transform: translateY(-3px);
+}
+.faq-item h3 {
+  color: var(--custom-primary);
+}
